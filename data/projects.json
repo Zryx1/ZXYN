@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "name": "Terminal Weather Bot",
+    "thumbnail": "https://placehold.co/400x225/1a1025/c084fc?text=Weather+Bot",
+    "link": "https://github.com/USERNAME-GITHUB-KAMU/terminal-weather-bot",
+    "category": "python"
+  },
+  {
+    "id": "2",
+    "name": "Realtime Chat Widget",
+    "thumbnail": "https://placehold.co/400x225/1a1025/c084fc?text=Chat+Widget",
+    "link": "https://github.com/USERNAME-GITHUB-KAMU/realtime-chat-widget",
+    "category": "javascript"
+  },
+  {
+    "id": "3",
+    "name": "Image Sorter AI",
+    "thumbnail": "https://placehold.co/400x225/1a1025/c084fc?text=Image+Sorter",
+    "link": "https://github.com/USERNAME-GITHUB-KAMU/image-sorter-ai",
+    "category": "multi"
+  },
+  {
+    "id": "4",
+    "name": "Landing Page Portfolio",
+    "thumbnail": "https://placehold.co/400x225/1a1025/c084fc?text=Portfolio",
+    "link": "https://github.com/USERNAME-GITHUB-KAMU/landing-page-portfolio",
+    "category": "html"
+  },
+  {
+    "id": "5",
+    "name": "Interactive Dashboard UI",
+    "thumbnail": "https://placehold.co/400x225/1a1025/c084fc?text=Dashboard+UI",
+    "link": "https://github.com/USERNAME-GITHUB-KAMU/interactive-dashboard-ui",
+    "category": "html-plus"
+  },
+  {
+    "id": "6",
+    "name": "Data Scraper Toolkit",
+    "thumbnail": "https://placehold.co/400x225/1a1025/c084fc?text=Data+Scraper",
+    "link": "https://github.com/USERNAME-GITHUB-KAMU/data-scraper-toolkit",
+    "category": "python"
+  }
+]
