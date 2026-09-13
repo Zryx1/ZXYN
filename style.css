@@ -167,30 +167,130 @@ input:focus-visible,
   }
 }
 
-.hero-eyebrow {
-  color: var(--purple-2);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  margin: 0 0 10px;
-}
-
 .hero-title {
-  font-size: clamp(32px, 6vw, 52px);
-  margin: 0 0 14px;
+  font-size: clamp(44px, 9vw, 76px);
+  margin: 0 0 10px;
   font-weight: 700;
+  letter-spacing: -0.02em;
   background: linear-gradient(120deg, #fff, var(--purple-2) 70%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 0 30px rgba(139, 92, 246, 0.25);
+  text-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
+}
+
+.hero-greeting {
+  color: var(--purple-2);
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 18px;
 }
 
 .hero-subtitle {
   color: var(--text-muted);
   font-size: 15px;
   max-width: 480px;
-  margin: 0 auto;
+  margin: 0 auto 28px;
   line-height: 1.6;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--purple-deep), var(--purple-1));
+  color: #fff;
+  font-size: 14.5px;
+  font-weight: 600;
+  box-shadow: 0 0 22px rgba(139, 92, 246, 0.4);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.55);
+}
+
+/* ============ PAGE NAV (atas) ============ */
+.page-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 0 10px;
+}
+
+.page-nav-link {
+  padding: 7px 18px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  border: 1px solid var(--border-soft);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.page-nav-link:hover {
+  color: var(--text-main);
+  border-color: var(--border-hover);
+}
+
+.page-nav-active {
+  color: #fff;
+  border-color: var(--purple-1);
+  background: linear-gradient(135deg, var(--purple-deep), rgba(139, 92, 246, 0.35));
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.28);
+}
+
+/* ============ PAGE TITLE (halaman Proyek) ============ */
+.page-title {
+  font-size: clamp(30px, 5vw, 44px);
+  font-weight: 700;
+  text-align: center;
+  margin: 10px 0 32px;
+  letter-spacing: -0.01em;
+}
+
+/* ============ CREATOR INFO ============ */
+.creator {
+  text-align: center;
+  padding: 10px 10px 10px;
+  opacity: 0;
+}
+
+#app.app-show .creator {
+  animation: fadeIn 0.6s ease 0.3s forwards;
+}
+
+.creator-label {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin: 0 0 14px;
+}
+
+.creator-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.creator-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease;
+}
+
+.creator-link:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.2);
 }
 
 /* ============ HEADER ============ */
