@@ -63,8 +63,10 @@ input:focus-visible,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 18px;
-  background: var(--bg-void);
+  gap: 22px;
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 40%, rgba(139, 92, 246, 0.14), transparent 65%),
+    var(--bg-void);
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
@@ -75,61 +77,89 @@ input:focus-visible,
 }
 
 .splash-ring {
-  width: 64px;
-  height: 64px;
+  width: 74px;
+  height: 74px;
   border-radius: 50%;
-  border: 3px solid rgba(139, 92, 246, 0.18);
+  position: relative;
+  border: 3px solid rgba(139, 92, 246, 0.14);
   border-top-color: var(--purple-2);
-  animation: spin 1s linear infinite;
-  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.45));
+  border-right-color: var(--purple-1);
+  animation: spin 1.1s cubic-bezier(0.6, 0.1, 0.4, 0.9) infinite;
+  filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.5));
+}
+
+.splash-ring::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.35), transparent 70%);
+  animation: pulseGlow 1.6s ease-in-out infinite;
 }
 
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50% { opacity: 0.9; transform: scale(1.05); }
+}
+
 .splash-title {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
   margin: 0;
-  color: var(--text-main);
+  background: linear-gradient(120deg, #fff, var(--purple-2) 75%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .splash-title span {
-  color: var(--purple-2);
   font-weight: 400;
+  opacity: 0.75;
 }
 
 .splash-bar-track {
-  width: 220px;
-  height: 8px;
+  width: 250px;
+  height: 9px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-soft);
   overflow: hidden;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .splash-bar-fill {
   height: 100%;
   width: 0%;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--purple-deep), var(--purple-1), var(--purple-2));
-  box-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+  background: linear-gradient(90deg, var(--purple-deep), var(--purple-1), var(--purple-2), var(--purple-1));
+  background-size: 200% 100%;
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.65);
   transition: width 0.15s ease-out;
+  animation: shimmerMove 1.4s linear infinite;
+}
+
+@keyframes shimmerMove {
+  to { background-position: -200% 0; }
 }
 
 .splash-percent {
-  font-size: 14px;
-  color: var(--purple-2);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-main);
   margin: 0;
   font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
 }
 
 .splash-caption {
   font-size: 12.5px;
   color: var(--text-muted);
-  margin: 0;
+  margin: -8px 0 0;
 }
 
 /* ============ APP REVEAL ============ */
@@ -211,33 +241,77 @@ input:focus-visible,
   box-shadow: 0 0 30px rgba(139, 92, 246, 0.55);
 }
 
-/* ============ PAGE NAV (atas) ============ */
+/* ============ PAGE NAV (topbar) ============ */
 .page-nav {
+  position: sticky;
+  top: 16px;
+  z-index: 50;
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 18px 0 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 12px 10px 18px;
+  margin: 16px 0 34px;
+  border-radius: 18px;
+  background: rgba(19, 13, 32, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.page-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.page-nav-mark {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg, var(--purple-deep), var(--purple-2), var(--purple-1), var(--purple-deep));
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+}
+
+.page-nav-brand .logo-accent {
+  font-weight: 400;
+  color: var(--purple-2);
+}
+
+.page-nav-links {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
 }
 
 .page-nav-link {
-  padding: 7px 18px;
+  padding: 7px 16px;
   border-radius: 999px;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--text-muted);
-  border: 1px solid var(--border-soft);
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .page-nav-link:hover {
   color: var(--text-main);
-  border-color: var(--border-hover);
 }
 
 .page-nav-active {
   color: #fff;
-  border-color: var(--purple-1);
-  background: linear-gradient(135deg, var(--purple-deep), rgba(139, 92, 246, 0.35));
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.28);
+  background: linear-gradient(135deg, var(--purple-deep), var(--purple-1));
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.4);
+}
+
+@media (max-width: 480px) {
+  .page-nav-brand span:not(.logo-accent) { font-size: 14px; }
 }
 
 /* ============ PAGE TITLE (halaman Proyek) ============ */
@@ -297,7 +371,7 @@ input:focus-visible,
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
   flex-wrap: wrap;
   margin-bottom: 22px;
@@ -345,7 +419,8 @@ input:focus-visible,
   border: 1px solid var(--border-soft);
   border-radius: 10px;
   padding: 10px 14px;
-  min-width: 260px;
+  width: 100%;
+  max-width: 420px;
   color: var(--text-muted);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
