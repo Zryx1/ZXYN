@@ -150,7 +150,15 @@ async function loadProjects() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  setupControls();
-  loadProjects();
-  runSplash(hideSplashAndShowApp);
+  const hasSplash = document.getElementById("splash");
+  const hasGallery = document.getElementById("grid");
+
+  if (hasSplash) {
+    runSplash(hideSplashAndShowApp);
+  }
+
+  if (hasGallery) {
+    setupControls();
+    loadProjects();
+  }
 });
