@@ -1,0 +1,29 @@
+nama=Terminal Weather Bot
+thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Weather+Bot
+link=https://github.com/USERNAME-GITHUB-KAMU/terminal-weather-bot
+kategori=python
+
+nama=Realtime Chat Widget
+thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Chat+Widget
+link=https://github.com/USERNAME-GITHUB-KAMU/realtime-chat-widget
+kategori=javascript
+
+nama=Image Sorter AI
+thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Image+Sorter
+link=https://github.com/USERNAME-GITHUB-KAMU/image-sorter-ai
+kategori=multi
+
+nama=Landing Page Portfolio
+thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Portfolio
+link=https://github.com/USERNAME-GITHUB-KAMU/landing-page-portfolio
+kategori=html
+
+nama=Interactive Dashboard UI
+thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Dashboard+UI
+link=https://github.com/USERNAME-GITHUB-KAMU/interactive-dashboard-ui
+kategori=html-plus
+
+nama=Data Scraper Toolkit
+thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Data+Scraper
+link=https://github.com/USERNAME-GITHUB-KAMU/data-scraper-toolkit
+kategori=python
