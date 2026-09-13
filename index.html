@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vortex Project</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div id="splash">
+    <div class="splash-ring"></div>
+    <h1 class="splash-title">VORTEX<span>PROJECT</span></h1>
+    <div class="splash-bar-track">
+      <div class="splash-bar-fill" id="splashBarFill"></div>
+    </div>
+    <p class="splash-percent" id="splashPercent">0%</p>
+    <p class="splash-caption">Memuat Vortex...</p>
+  </div>
+
+  <!-- Konten Utama -->
+  <div id="app" class="app-hidden">
+
+    <section class="hero">
+      <p class="hero-eyebrow">Vortex Project</p>
+      <h1 class="hero-title" id="heroTitle">Selamat Datang</h1>
+      <p class="hero-subtitle">
+        Kumpulan proyek Python, JavaScript, Multi, HTML Only, dan HTML+.
+        Cari nama, klik thumbnail, langsung meluncur ke link.
+      </p>
+    </section>
+
+    <header class="header">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text">Vortex<span class="logo-accent">Project</span></span>
+      </div>
+      <div class="search-bar">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <input type="text" id="searchInput" placeholder="Cari nama proyek..." />
+      </div>
+    </header>
+
+    <nav class="tabs" id="tabs">
+      <button class="tab tab-active" data-category="all">Semua</button>
+      <button class="tab" data-category="python">Python</button>
+      <button class="tab" data-category="javascript">JavaScript</button>
+      <button class="tab" data-category="multi">Multi</button>
+      <button class="tab" data-category="html">HTML Only</button>
+      <button class="tab" data-category="html-plus">HTML+</button>
+    </nav>
+
+    <p class="result-count" id="resultCount"></p>
+
+    <section class="grid" id="grid"></section>
+
+    <p class="empty-state" id="emptyState" hidden>Tidak ada proyek yang cocok.</p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
