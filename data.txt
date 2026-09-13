@@ -3,3 +3,4 @@ thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Weather+Bot
 link=https://github.com/USERNAME-GITHUB-KAMU/terminal-weather-bot
 kategori=python
 
+
