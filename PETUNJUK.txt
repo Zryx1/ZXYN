@@ -1,0 +1,48 @@
+VORTEX PROJECT — VERSI SIMPEL
+================================
+
+ISI FOLDER
+----------
+index.html   -> struktur halaman
+style.css    -> tampilan (tema ungu-hitam glow)
+script.js    -> logika splash screen, search, filter, render kartu
+data.txt     -> daftar proyek kamu (paling gampang diedit)
+
+CARA TAMBAH PROYEK
+-------------------
+Buka data.txt, tambah blok baru di paling bawah, format:
+
+nama=Nama Proyek Kamu
+thumbnail=https://url-gambar.png
+link=https://link-tujuan.com
+kategori=python
+
+Kosongkan 1 baris sebelum blok berikutnya. Nilai kategori harus salah satu:
+python, javascript, multi, html, html-plus
+
+CARA TES DI KOMPUTER/HP
+-------------------------
+File data.txt dibaca pakai fetch(), jadi TIDAK bisa dibuka langsung
+dengan klik 2x index.html (browser akan blokir karena mode file://).
+Harus dijalankan lewat server lokal kecil, contoh:
+
+  python -m http.server 8000
+
+lalu buka http://localhost:8000 di browser.
+
+Kalau langsung di-deploy ke Vercel/GitHub Pages, ini otomatis jalan
+normal karena sudah lewat http/https — tidak perlu langkah di atas.
+
+DEPLOY KE VERCEL
+------------------
+1. Upload 4 file ini (index.html, style.css, script.js, data.txt) ke
+   repo GitHub kamu (bisa pakai auto_upload.py yang sudah dibuat).
+2. Buka vercel.com -> Add New Project -> Import repo itu.
+3. Framework Preset pilih "Other" (situs statis biasa) -> Deploy.
+4. Selesai, situs online.
+
+UPDATE PROYEK SETELAH ONLINE
+-------------------------------
+Edit data.txt langsung di GitHub (tombol pensil) -> Commit.
+Refresh halaman situsnya, data baru langsung muncul (fetch selalu
+ambil data.txt versi terbaru, tidak di-cache).
