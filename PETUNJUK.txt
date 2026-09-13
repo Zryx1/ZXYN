@@ -3,10 +3,28 @@ VORTEX PROJECT — VERSI SIMPEL
 
 ISI FOLDER
 ----------
-index.html   -> struktur halaman
+index.html   -> halaman welcome (splash, teks besar, info pembuat)
+main.html    -> halaman koleksi proyek (search, filter, grid)
 style.css    -> tampilan (tema ungu-hitam glow)
 script.js    -> logika splash screen, search, filter, render kartu
 data.txt     -> daftar proyek kamu (paling gampang diedit)
+
+Kedua halaman punya navigasi "Beranda / Proyek" di paling atas buat
+pindah-pindah.
+
+ISI LINK TELEGRAM & TIKTOK
+----------------------------
+Buka index.html, cari 2 baris ini (ditandai komentar):
+
+  <!-- GANTI href DI BAWAH INI DENGAN LINK TELEGRAM KAMU -->
+  <a href="#" class="creator-link" ...>
+
+  <!-- GANTI href DI BAWAH INI DENGAN LINK TIKTOK KAMU -->
+  <a href="#" class="creator-link" ...>
+
+Ganti href="#" jadi link asli, contoh:
+  href="https://t.me/username_kamu"
+  href="https://tiktok.com/@username_kamu"
 
 CARA TAMBAH PROYEK
 -------------------
@@ -35,14 +53,15 @@ normal karena sudah lewat http/https — tidak perlu langkah di atas.
 
 DEPLOY KE VERCEL
 ------------------
-1. Upload 4 file ini (index.html, style.css, script.js, data.txt) ke
-   repo GitHub kamu (bisa pakai auto_upload.py yang sudah dibuat).
+1. Upload semua file ini (index.html, main.html, style.css, script.js,
+   data.txt) ke repo GitHub kamu (bisa pakai auto_upload.py).
 2. Buka vercel.com -> Add New Project -> Import repo itu.
 3. Framework Preset pilih "Other" (situs statis biasa) -> Deploy.
-4. Selesai, situs online.
+4. Selesai, situs online. Halaman awal otomatis index.html.
 
 UPDATE PROYEK SETELAH ONLINE
 -------------------------------
 Edit data.txt langsung di GitHub (tombol pensil) -> Commit.
-Refresh halaman situsnya, data baru langsung muncul (fetch selalu
+Refresh halaman main.html, data baru langsung muncul (fetch selalu
 ambil data.txt versi terbaru, tidak di-cache).
+
