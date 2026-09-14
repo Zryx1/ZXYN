@@ -1,5 +1,5 @@
 nama=Terminal Weather Bot
-thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Weather+Bot
+thumbnail=https://files.catbox.moe/sngjz4.jpg
 link=https://github.com/USERNAME-GITHUB-KAMU/terminal-weather-bot
 codetype=Python
 note=Bot cuaca yang jalan di terminal, ambil data dari API cuaca publik.
