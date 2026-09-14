@@ -21,7 +21,7 @@
       </div>
     </nav>
 
-    <h1 class="page-title">Koleksi Proyek</h1>
+    <h1 class="page-title">Koleksi Script</h1>
 
     <header class="header">
       <div class="search-bar">
@@ -33,21 +33,35 @@
       </div>
     </header>
 
-    <nav class="tabs" id="tabs">
-      <button class="tab tab-active" data-category="all">Semua</button>
-      <button class="tab" data-category="python">Python</button>
-      <button class="tab" data-category="javascript">JavaScript</button>
-      <button class="tab" data-category="multi">Multi</button>
-      <button class="tab" data-category="html">HTML Only</button>
-      <button class="tab" data-category="html-plus">HTML+</button>
-    </nav>
-
     <p class="result-count" id="resultCount"></p>
 
     <section class="grid" id="grid"></section>
 
     <p class="empty-state" id="emptyState" hidden>Tidak ada proyek yang cocok.</p>
 
+  </div>
+
+  <!-- Popup Detail Script -->
+  <div id="modalOverlay" class="modal-overlay" hidden>
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Tutup">&times;</button>
+
+      <h3 class="modal-name" id="modalName"></h3>
+
+      <div class="modal-field">
+        <span class="modal-label">Code Type</span>
+        <div class="modal-codetypes" id="modalCodeTypes"></div>
+      </div>
+
+      <div class="modal-field">
+        <span class="modal-label">Note</span>
+        <p class="modal-note" id="modalNote"></p>
+      </div>
+
+      <a href="#" id="modalLink" class="modal-link-btn" target="_blank" rel="noopener noreferrer">
+        Buka Link →
+      </a>
+    </div>
   </div>
 
   <script src="script.js"></script>
