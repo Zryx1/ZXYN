@@ -110,6 +110,11 @@ function renderProjects() {
 function openModal(project) {
   const overlay = document.getElementById("modalOverlay");
   const codeTypesWrap = document.getElementById("modalCodeTypes");
+  const thumb = document.getElementById("modalThumb");
+
+  thumb.src = project.thumbnail || "";
+  thumb.alt = project.name;
+  thumb.hidden = !project.thumbnail;
 
   document.getElementById("modalName").textContent = project.name;
   document.getElementById("modalNote").textContent = project.note || "-";
