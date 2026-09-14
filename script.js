@@ -36,10 +36,11 @@ function hideSplashAndShowApp() {
 // ============ 2. PARSING data.txt ============
 // Format data.txt: blok dipisah baris kosong, tiap baris "key=value"
 // Contoh:
-//   nama=Nama Proyek
+//   nama=Nama Script
 //   thumbnail=https://...
 //   link=https://...
-//   kategori=python
+//   codetype=Python, JavaScript
+//   note=Deskripsi singkat script ini
 function parseDataText(raw) {
   const blocks = raw
     .replace(/\r\n/g, "\n")
@@ -57,23 +58,15 @@ function parseDataText(raw) {
       if (key === "nama") item.name = value;
       if (key === "thumbnail") item.thumbnail = value;
       if (key === "link") item.link = value;
-      if (key === "kategori") item.category = value;
+      if (key === "codetype") item.codetype = value;
+      if (key === "note") item.note = value;
     });
     return item;
   }).filter((item) => item.name && item.link);
 }
 
 // ============ 3. RENDER ============
-const CATEGORY_LABELS = {
-  python: "Python",
-  javascript: "JavaScript",
-  multi: "Multi",
-  html: "HTML Only",
-  "html-plus": "HTML+",
-};
-
 let allProjects = [];
-let activeCategory = "all";
 let activeQuery = "";
 
 function renderProjects() {
@@ -82,13 +75,9 @@ function renderProjects() {
   const resultCount = document.getElementById("resultCount");
 
   const q = activeQuery.trim().toLowerCase();
-  const filtered = allProjects.filter((p) => {
-    const matchQuery = p.name.toLowerCase().includes(q);
-    const matchCategory = activeCategory === "all" || p.category === activeCategory;
-    return matchQuery && matchCategory;
-  });
+  const filtered = allProjects.filter((p) => p.name.toLowerCase().includes(q));
 
-  resultCount.textContent = `${filtered.length} dari ${allProjects.length} proyek`;
+  resultCount.textContent = `${filtered.length} dari ${allProjects.length} script`;
 
   grid.innerHTML = "";
   if (filtered.length === 0) {
@@ -98,13 +87,9 @@ function renderProjects() {
   emptyState.hidden = true;
 
   filtered.forEach((project) => {
-    const card = document.createElement("a");
+    const card = document.createElement("button");
+    card.type = "button";
     card.className = "card";
-    card.href = project.link;
-    card.target = "_blank";
-    card.rel = "noopener noreferrer";
-
-    const label = CATEGORY_LABELS[project.category] || project.category || "-";
 
     card.innerHTML = `
       <div class="card-thumb">
@@ -112,31 +97,61 @@ function renderProjects() {
       </div>
       <div class="card-body">
         <h3>${project.name}</h3>
-        <span class="badge">${label}</span>
+        <span class="badge">Script</span>
       </div>
     `;
+
+    card.addEventListener("click", () => openModal(project));
     grid.appendChild(card);
   });
 }
 
-// ============ 4. EVENT: SEARCH & TABS ============
+// ============ 4. MODAL / POPUP DETAIL ============
+function openModal(project) {
+  const overlay = document.getElementById("modalOverlay");
+  const codeTypesWrap = document.getElementById("modalCodeTypes");
+
+  document.getElementById("modalName").textContent = project.name;
+  document.getElementById("modalNote").textContent = project.note || "-";
+  document.getElementById("modalLink").href = project.link;
+
+  const types = (project.codetype || "-").split(",").map((t) => t.trim()).filter(Boolean);
+  codeTypesWrap.innerHTML = types
+    .map((t) => `<span class="codetype-chip">${t}</span>`)
+    .join("");
+
+  overlay.hidden = false;
+  requestAnimationFrame(() => overlay.classList.add("modal-open"));
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  const overlay = document.getElementById("modalOverlay");
+  overlay.classList.remove("modal-open");
+  document.body.style.overflow = "";
+  setTimeout(() => { overlay.hidden = true; }, 200);
+}
+
+function setupModal() {
+  document.getElementById("modalClose").addEventListener("click", closeModal);
+  document.getElementById("modalOverlay").addEventListener("click", (e) => {
+    if (e.target.id === "modalOverlay") closeModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+}
+
+// ============ 5. EVENT: SEARCH ============
 function setupControls() {
   document.getElementById("searchInput").addEventListener("input", (e) => {
     activeQuery = e.target.value;
     renderProjects();
   });
-
-  document.querySelectorAll(".tab").forEach((tab) => {
-    tab.addEventListener("click", () => {
-      document.querySelectorAll(".tab").forEach((t) => t.classList.remove("tab-active"));
-      tab.classList.add("tab-active");
-      activeCategory = tab.dataset.category;
-      renderProjects();
-    });
-  });
+  setupModal();
 }
 
-// ============ 5. INIT ============
+// ============ 6. INIT ============
 async function loadProjects() {
   try {
     const res = await fetch("data.txt", { cache: "no-store" });
