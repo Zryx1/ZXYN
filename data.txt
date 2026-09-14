@@ -1,35 +1,7 @@
-nama=Terminal Weather Bot
+nama=Moon Script
 thumbnail=https://files.catbox.moe/sngjz4.jpg
 link=https://github.com/USERNAME-GITHUB-KAMU/terminal-weather-bot
 codetype=Python
-note=Bot cuaca yang jalan di terminal, ambil data dari API cuaca publik.
+note=Masukan Text
 
-nama=Realtime Chat Widget
-thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Chat+Widget
-link=https://github.com/USERNAME-GITHUB-KAMU/realtime-chat-widget
-codetype=JavaScript
-note=Widget chat realtime pakai WebSocket, tinggal tempel ke website mana pun.
 
-nama=Image Sorter AI
-thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Image+Sorter
-link=https://github.com/USERNAME-GITHUB-KAMU/image-sorter-ai
-codetype=Python, JavaScript
-note=Sortir gambar otomatis pakai model AI sederhana, backend Python + UI JavaScript.
-
-nama=Landing Page Portfolio
-thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Portfolio
-link=https://github.com/USERNAME-GITHUB-KAMU/landing-page-portfolio
-codetype=JavaScript
-note=Template landing page portofolio, ringan dan gampang dikustom.
-
-nama=Interactive Dashboard UI
-thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Dashboard+UI
-link=https://github.com/USERNAME-GITHUB-KAMU/interactive-dashboard-ui
-codetype=JavaScript
-note=Dashboard interaktif dengan grafik dan filter data secara realtime.
-
-nama=Data Scraper Toolkit
-thumbnail=https://placehold.co/400x225/1a1025/c084fc?text=Data+Scraper
-link=https://github.com/USERNAME-GITHUB-KAMU/data-scraper-toolkit
-codetype=Python
-note=Kumpulan script scraping data dari berbagai sumber, siap pakai.
