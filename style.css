@@ -655,11 +655,17 @@ input:focus-visible,
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.2s ease;
+}
+
+.modal-overlay[hidden] {
+  display: none;
 }
 
 .modal-overlay.modal-open {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .modal-box {
