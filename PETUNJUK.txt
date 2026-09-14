@@ -26,17 +26,23 @@ Ganti href="#" jadi link asli, contoh:
   href="https://t.me/username_kamu"
   href="https://tiktok.com/@username_kamu"
 
-CARA TAMBAH PROYEK
+CARA TAMBAH SCRIPT
 -------------------
 Buka data.txt, tambah blok baru di paling bawah, format:
 
-nama=Nama Proyek Kamu
+nama=Nama Script Kamu
 thumbnail=https://url-gambar.png
 link=https://link-tujuan.com
-kategori=python
+codetype=Python
+note=Deskripsi singkat script ini
 
-Kosongkan 1 baris sebelum blok berikutnya. Nilai kategori harus salah satu:
-python, javascript, multi, html, html-plus
+Kosongkan 1 baris sebelum blok berikutnya.
+
+codetype boleh diisi lebih dari satu, pisahkan dengan koma, contoh:
+codetype=Python, JavaScript
+
+Klik kartu di halaman Proyek akan membuka popup berisi Nama, Code Type,
+Note, dan tombol ungu "Buka Link" di tengah bawah yang mengarah ke link.
 
 CARA TES DI KOMPUTER/HP
 -------------------------
